@@ -2,6 +2,8 @@
 
 ## Setup
 
+### Create Dockerfile
+
 vi Dockerfile
 ```
 FROM alpine:3.15.3
@@ -23,21 +25,25 @@ RUN curl -L https://github.com/cycloidio/terracognita/releases/latest/download/t
         && mv terracognita-linux-amd64 /usr/local/bin/terracognita
 ```
 
-Build Docker image
+
+### Build Docker image
+
 ```
 docker build -t terracognita:0.1 .
 ```
 
 
 
-Run in Docker
+### Run in Docker
+
 ```
 docker run -it --rm terracognita:0.1 sh
 ```
 
 ## Usage
 
-Get help
+### Get help
+
 ```
 terracognita
 
@@ -71,7 +77,8 @@ Use "terracognita [command] --help" for more information about a command.
 ```
 
 
-List all possible ressources for AWS, GCP or Azure
+### List all possible ressources for AWS, GCP or Azure
+
 ```
 terracognita aws resources
 
@@ -191,7 +198,8 @@ aws_vpn_gateway
 ```
 
 
-Configure AWS credentials
+### Configure AWS credentials
+
 ```
 export AWS_ACCESS_KEY_ID="XXXXX"
 export AWS_SECRET_ACCESS_KEY="XXXXX"
@@ -200,7 +208,8 @@ export AWS_SESSION_TOKEN="XXXXX"
 
 
 
-Create Terraform and State file only for: aws_iam_user
+### Create Terraform and State file only for: aws_iam_user
+
 ```
 terracognita aws --tfstate resources.tfstate --hcl resources.tf --aws-default-region eu-central-1 --include aws_iam_user
 ```
@@ -239,7 +248,8 @@ resource "aws_ses_domain_dkim" "demo_test_example_de" {
 ```
 
 
-Create Terraform code and state for all ressources
+### Create Terraform code and state for all ressources
+
 ```
 terracognita aws --tfstate resources.tfstate --hcl resources.tf --aws-default-region eu-central-1 
 ```
