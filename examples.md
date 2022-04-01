@@ -191,6 +191,14 @@ aws_vpn_gateway
 ```
 
 
+Configure AWS credentials
+```
+export AWS_ACCESS_KEY_ID="XXXXX"
+export AWS_SECRET_ACCESS_KEY="XXXXX"
+export AWS_SESSION_TOKEN="XXXXX"
+```
+
+
 
 Create Terraform and State file only for: aws_iam_user
 ```
