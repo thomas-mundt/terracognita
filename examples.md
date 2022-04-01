@@ -255,3 +255,21 @@ terracognita aws --tfstate resources.tfstate --hcl resources.tf --aws-default-re
 ```
 
 
+### Create Terraform module
+
+```
+terracognita aws --tfstate resources.tfstate --hcl resources.tf --aws-default-region eu-central-1 --include aws_ses_domain_dkim --module my-module
+```
+
+tree
+```
+.
+├── my-module
+│   ├── module-my-module
+│   │   ├── ses.tf
+│   │   └── variables.tf
+│   └── module.tf
+└── resources.tfstate
+```
+
+
